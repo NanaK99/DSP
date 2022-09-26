@@ -24,11 +24,13 @@ file_path = 'v.wav'
 start = 16000
 end = 24000
 
+
 def read_audio(path):
 	# path: path of audio file with .wav extansion
 	sr, data = wavfile.read(path)
 	data = data.astype('float32')
 	return data
+
 
 def write_audio(path, sr, data):
 	# path: the path of output file,
@@ -38,9 +40,11 @@ def write_audio(path, sr, data):
 	wavfile.write(path, sr, data)
 	return None
 
+
 def compute_power(data):
 	power = np.mean(data**2)
 	return power
+
 
 def plot_waveform(data, sampling_frequency=None):
 	# data: the audio waveform data
@@ -57,6 +61,7 @@ def plot_waveform(data, sampling_frequency=None):
         plt.xlabel('samples')
         plt.show()
     return None
+
 
 def change_sampling_rate(input_path, output_path, output_sr):
 	# input_path: path of input audio file
